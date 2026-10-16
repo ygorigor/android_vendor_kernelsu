@@ -4,18 +4,18 @@
 # Update prebuilt/ to a KernelSU-Next release: fetch and verify the
 # kernelsu.ko for the given KMI, and rebuild ksuinit with our patch applied.
 #
-# usage: update.sh <release tag> <android ndk dir> [kmi, default android14-6.1]
+# usage: update.sh <release tag> <android ndk dir> [kmi, default android14-5.15]
 
 set -euo pipefail
 
 if [[ $# -lt 2 || $# -gt 3 ]]; then
-  echo "usage: $0 <release tag> <android ndk dir> [kmi, default android14-6.1]" >&2
+  echo "usage: $0 <release tag> <android ndk dir> [kmi, default android14-5.15]" >&2
   exit 1
 fi
 
 TAG="$1"
 NDK="$(realpath "$2")"
-KMI="${3:-android14-6.1}"
+KMI="${3:-android14-5.15}"
 REPO="KernelSU-Next/KernelSU-Next"
 KO="aarch64_${KMI}_kernelsu.ko"
 if ! gh api "repos/${REPO}/releases/tags/${TAG}" --jq '.assets[].name' | grep -qx "${KO}"; then
