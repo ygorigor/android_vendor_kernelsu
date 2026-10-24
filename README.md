@@ -14,11 +14,11 @@ bundled: install the official KernelSU-Next APK.
 
 | File | Source |
 |---|---|
-| `prebuilt/kernelsu.ko` | v3.4.2 `aarch64_android14-6.1_kernelsu.ko`, sha256 `961d2ef0e135a71d2620f10ebdc6932ff5b43069c5cf7da595fba5ab666c4b72` |
-| `prebuilt/init.ksu` | v3.4.2 (`4c706b59`) `userspace/ksuinit` + patch, NDK r29, sha256 `3246e99d73498ff281d5b0957410105486586e423541fae5e0cf87b9c0f058d3` |
+| `prebuilt/kernelsu.ko` | v3.4.2 `aarch64_android14-5.15_kernelsu.ko`, sha256 `fac9464f54ebca4d1d7fd1ee3a4b8744bcb1965759dc1d7b68346ae9c85c9dd2` |
+| `prebuilt/init.ksu` | v3.4.2 (`4c706b59`) `userspace/ksuinit` + patch, NDK r25, sha256 `3fedd8ce0a45858e012dbd7d0191ae2805214ee149a0f46bc3666d7977657431` |
 
 Update with `./update.sh <tag> <ndk dir> [kmi]`. The KMI defaults to
-`android14-6.1`; pass e.g. `android16-6.12` after a kernel upgrade.
+`android14-5.15`; pass e.g. `android16-6.12` after a kernel upgrade.
 
 Licenses: `kernelsu.ko` is GPL-2.0-only (`LICENSE.GPL-2.0`), `ksuinit` is
 GPL-3.0 (`LICENSE.GPL-3.0`).
